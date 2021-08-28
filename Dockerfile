@@ -1,5 +1,5 @@
 # Pull base image
-FROM registry.dev.virtunet.io/virtunet/rpi-python-serial-wiringpi/master:latest
+FROM registry.virtunet.io/virtunet/rpi-python-serial-wiringpi/master:latest
 
 # Install dependencies
 RUN pip install wheel
