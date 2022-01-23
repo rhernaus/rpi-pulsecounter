@@ -34,11 +34,11 @@ meter2_gpio = 13 # GPIO27 is pin 13
 meter3_gpio = 15 # GPIO22 is pin 15
 
 # Configure mqtt
-mqtt_server = '10.128.0.19'
-mqtt_port = 1883
+mqtt_server = os.environ.get('MQTT_SERVER')
+mqtt_port = os.environ.get('MQTT_PORT')
 mqtt_timeout = 60
-mqtt_username = 'sonoff'
-mqtt_password = 'sonoff'
+mqtt_username = os.environ.get('MQTT_USERNAME')
+mqtt_password = os.environ.get('MQTT_PASSWORD')
 
 # Meter mqtt topicnames
 meter1_topicname = 'hass/power/meter1/kw'
