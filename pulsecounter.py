@@ -31,8 +31,8 @@ meter3_avgkW = float(0)
 
 # Configure GPIO pins
 meter1_gpio = 11 # GPIO17 is pin 11
-meter2_gpio = 13 # GPIO27 is pin 13
-meter3_gpio = 15 # GPIO22 is pin 15
+meter2_gpio = 15 # GPIO27 is pin 15
+meter3_gpio = 13 # GPIO22 is pin 13
 
 # Configure mqtt
 mqtt_server = os.environ.get('MQTT_HOST')
