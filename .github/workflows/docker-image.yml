@@ -7,19 +7,35 @@ on:
     branches: [ master ]
 
 jobs:
-
-  build:
-  
+  build:  
     runs-on: ubuntu-latest
     
-    steps:
-    - uses: actions/checkout@v2
+    env:      
+      DOCKER_REGISTRY: registry.hub.docker.com
+      DOCKER_IMAGE: rhernaus/rpi-pulsecounter
+      DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+      DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}  
+      DOCKER_TARGET_PLATFORM: linux/arm/v7          
     
-    - name: Docker Build
-      run: docker build . --file Dockerfile --tag $GITHUB_REPOSITORY:$(date +%s)
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
       
-    - name: Docker Login
-      run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
+    - name: Set up QEMU
+      uses: docker/setup-qemu-action@v1
       
-    - name: Docker Push
-      run: docker push -a $GITHUB_REPOSITORY
+    - name: Docker Setup Buildx
+      uses: docker/setup-buildx-action@v1
+
+    - name: Login      
+      if: success()      
+      run: |        
+        echo "${DOCKER_PASSWORD}" | docker login ${DOCKER_REGISTRY} --username "${DOCKER_USERNAME}" --password-stdin 
+    - name: Buildx
+      if: success()      
+      run: |        
+        docker buildx build \
+        --platform ${DOCKER_TARGET_PLATFORM} \
+        --tag ${DOCKER_REGISTRY}/${DOCKER_IMAGE}:$(date +%s) \
+        --file ./Dockerfile \
+        --output type=image,push=true .
