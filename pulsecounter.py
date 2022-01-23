@@ -1,6 +1,7 @@
 import RPi.GPIO as GPIO
 import paho.mqtt.client as mqtt
 import time
+import os
 
 # Sleep time (in seconds)
 sleeptime = 10
