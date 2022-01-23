@@ -1,5 +1,5 @@
 # Pull base image
-FROM rhernaus/rpi-python-serial-wiringpi:latest
+FROM rhernaus/rpi-python-serial-wiringpi:1642943603
 
 # Install dependencies
 RUN pip install wheel
