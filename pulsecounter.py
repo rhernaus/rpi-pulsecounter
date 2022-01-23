@@ -35,7 +35,7 @@ meter2_gpio = 13 # GPIO27 is pin 13
 meter3_gpio = 15 # GPIO22 is pin 15
 
 # Configure mqtt
-mqtt_server = os.environ.get('MQTT_SERVER')
+mqtt_server = os.environ.get('MQTT_HOST')
 mqtt_port = os.environ.get('MQTT_PORT')
 mqtt_timeout = 60
 mqtt_username = os.environ.get('MQTT_USERNAME')
