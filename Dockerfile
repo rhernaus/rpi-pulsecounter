@@ -2,8 +2,7 @@
 FROM rhernaus/rpi-python-serial-wiringpi:1642943603
 
 # Install dependencies
-RUN pip install wheel
-RUN pip install paho-mqtt rpi.gpio
+RUN pip install -r requirements.txt
 
 # Define default command
 COPY . /app
