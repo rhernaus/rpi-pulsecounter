@@ -1,6 +1,6 @@
 # rpi-pulsecounter
 
-<https://hub.docker.com/repository/docker/rhernaus/rpi-pulsecounter>
+<https://hub.docker.com/r/rhernaus/rpi-pulsecounter>
 
 ## Introduction
 
