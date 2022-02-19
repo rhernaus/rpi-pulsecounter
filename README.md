@@ -38,6 +38,7 @@ IMAGE=rhernaus/rpi-pulsecounter
 docker pull $IMAGE
 docker run \
   --name rpi-pulsecounter \
+  --pull always \
   --device /dev/gpiomem:/dev/gpiomem \
   --privileged \
   --restart=unless-stopped \

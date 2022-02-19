@@ -10,7 +10,7 @@ def on_pulse(pin):
   gpio = [gpio for gpio in config if gpio["pin"] == pin][0]
   gpio["kw"] = 3600 / (time.time() - gpio["t0"]) / gpio["impkwh"]
   gpio["t0"] = time.time()
-  logging.info(f'Pulse! Pin: {gpio["pin"]} Power: {gpio["kw"]} kW')
+  logging.info(f'Pulse! Pin: {gpio["pin"]} Power: {round(gpio["kw"],3)} kW')
 
 logging.basicConfig(
   format='%(asctime)s %(levelname)-8s %(message)s',
@@ -56,5 +56,5 @@ while True:
   for gpio in config:
     if gpio["kw"] > 3600 / (time.time() - gpio["t0"]) / gpio["impkwh"]:
       gpio["kw"] = 3600 / (time.time() - gpio["t0"]) / gpio["impkwh"]
-    logging.info(f'Pin: {gpio["pin"]} Power: {gpio["kw"]} kW SecondsSinceLastPulse: {int(time.time() - gpio["t0"])}')
+    logging.info(f'Pin: {gpio["pin"]} Power: {round(gpio["kw"],3)} kW SecondsSinceLastPulse: {int(time.time() - gpio["t0"])}')
     client.publish(gpio["topic"], round(float(gpio["kw"]),3))
