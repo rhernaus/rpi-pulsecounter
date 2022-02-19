@@ -30,7 +30,7 @@ config     json with configuration
 ]
 ```
 
-A docker image with the script is published on Docker Hub. You can start it on a Raspberry Pi with the example script below.
+A docker image is published on Docker Hub. You can start it on a Raspberry Pi with the example script below.
 
 ```bash
 #!/bin/bash
@@ -39,7 +39,8 @@ docker pull $IMAGE
 docker run \
   --name rpi-pulsecounter \
   --device /dev/gpiomem:/dev/gpiomem \
-  --privileged --restart=unless-stopped \
+  --privileged \
+  --restart=unless-stopped \
   -e mqtt_host=x.x.x.x
   -e mqtt_port=1883
   -e mqtt_user=xxxxxx
