@@ -56,29 +56,25 @@ docker run \
 
 ```text
 pi@raspberrypi:~ $ docker logs -f rpi-pulsecounter
-2022-02-19 13:16:53 INFO     Pulse! Pin: 15 Power: 1.167 kW
-2022-02-19 13:16:57 INFO     Pulse! Pin: 15 Power: 0.84 kW
-2022-02-19 13:17:00 INFO     Pin: 11 Power: 0.0 kW SecondsSinceLastPulse: 10
-2022-02-19 13:17:00 INFO     Pin: 15 Power: 0.84 kW SecondsSinceLastPulse: 2
-2022-02-19 13:17:00 INFO     Pin: 13 Power: 0.0 kW SecondsSinceLastPulse: 10
-2022-02-19 13:17:01 INFO     Pulse! Pin: 15 Power: 0.872 kW
-2022-02-19 13:17:06 INFO     Pulse! Pin: 15 Power: 0.872 kW
-2022-02-19 13:17:10 INFO     Pulse! Pin: 15 Power: 0.826 kW
-2022-02-19 13:17:10 INFO     Pin: 11 Power: 0.0 kW SecondsSinceLastPulse: 20
-2022-02-19 13:17:10 INFO     Pin: 15 Power: 0.826 kW SecondsSinceLastPulse: 0
-2022-02-19 13:17:10 INFO     Pin: 13 Power: 0.0 kW SecondsSinceLastPulse: 20
-2022-02-19 13:17:14 INFO     Pulse! Pin: 15 Power: 0.911 kW
-2022-02-19 13:17:18 INFO     Pulse! Pin: 15 Power: 0.831 kW
-2022-02-19 13:17:20 INFO     Pin: 11 Power: 0.0 kW SecondsSinceLastPulse: 30
-2022-02-19 13:17:20 INFO     Pin: 15 Power: 0.831 kW SecondsSinceLastPulse: 1
-2022-02-19 13:17:20 INFO     Pin: 13 Power: 0.0 kW SecondsSinceLastPulse: 30
-2022-02-19 13:17:22 INFO     Pulse! Pin: 15 Power: 0.901 kW
-2022-02-19 13:17:26 INFO     Pulse! Pin: 15 Power: 0.831 kW
-2022-02-19 13:17:27 INFO     Pulse! Pin: 11 Power: 0.976 kW
-2022-02-19 13:17:30 INFO     Pin: 11 Power: 0.976 kW SecondsSinceLastPulse: 3
-2022-02-19 13:17:30 INFO     Pin: 15 Power: 0.831 kW SecondsSinceLastPulse: 3
-2022-02-19 13:17:30 INFO     Pin: 13 Power: 0.0 kW SecondsSinceLastPulse: 40
-2022-02-19 13:17:31 INFO     Pulse! Pin: 15 Power: 0.832 kW
-2022-02-19 13:17:35 INFO     Pulse! Pin: 15 Power: 0.893 kW
-2022-02-19 13:17:39 INFO     Pulse! Pin: 15 Power: 0.829 kW
+2022-02-19 13:35:31 INFO     Pin: 11 | Power: 1.744 kW | Last pulse 9 seconds ago
+2022-02-19 13:35:31 INFO     Pin: 15 | Power: 0.935 kW | Last pulse 0 seconds ago
+2022-02-19 13:35:31 INFO     Pin: 13 | Power: 0.000 kW | Last pulse 30 seconds ago
+2022-02-19 13:35:35 INFO     Pin: 15 | Power: 0.837 kW | Pulse!
+2022-02-19 13:35:39 INFO     Pin: 15 | Power: 0.900 kW | Pulse!
+2022-02-19 13:35:41 INFO     Pin: 11 | Power: 1.744 kW | Last pulse 19 seconds ago
+2022-02-19 13:35:41 INFO     Pin: 15 | Power: 0.900 kW | Last pulse 1 seconds ago
+2022-02-19 13:35:41 INFO     Pin: 13 | Power: 0.000 kW | Last pulse 40 seconds ago
+2022-02-19 13:35:43 INFO     Pin: 15 | Power: 0.859 kW | Pulse!
+2022-02-19 13:35:47 INFO     Pin: 15 | Power: 0.866 kW | Pulse!
+2022-02-19 13:35:51 INFO     Pin: 11 | Power: 1.222 kW | Last pulse 29 seconds ago
+2022-02-19 13:35:51 INFO     Pin: 15 | Power: 0.866 kW | Last pulse 3 seconds ago
+2022-02-19 13:35:51 INFO     Pin: 13 | Power: 0.000 kW | Last pulse 50 seconds ago
+2022-02-19 13:35:51 INFO     Pin: 15 | Power: 0.918 kW | Pulse!
+2022-02-19 13:35:52 INFO     Pin: 11 | Power: 1.178 kW | Pulse!
+2022-02-19 13:35:55 INFO     Pin: 15 | Power: 0.854 kW | Pulse!
+2022-02-19 13:35:59 INFO     Pin: 15 | Power: 0.928 kW | Pulse!
+2022-02-19 13:36:01 INFO     Pin: 11 | Power: 1.178 kW | Last pulse 8 seconds ago
+2022-02-19 13:36:01 INFO     Pin: 15 | Power: 0.928 kW | Last pulse 1 seconds ago
+2022-02-19 13:36:01 INFO     Pin: 13 | Power: 0.000 kW | Last pulse 60 seconds ago
+2022-02-19 13:36:03 INFO     Pin: 15 | Power: 0.854 kW | Pulse!
 ```
