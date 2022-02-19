@@ -11,6 +11,8 @@ ABB C13 110-100    100
 ABB C13 110-101    1000
 ```
 
+Raspberry Pi GPIO header pins: <https://www.raspberrypi-spy.co.uk/2012/06/simple-guide-to-the-rpi-gpio-header-and-pins/>
+
 ## Usage
 
 ```text
@@ -53,5 +55,30 @@ docker run \
 ## Example output
 
 ```text
-
+pi@raspberrypi:~ $ docker logs -f rpi-pulsecounter
+2022-02-19 13:16:53 INFO     Pulse! Pin: 15 Power: 1.167 kW
+2022-02-19 13:16:57 INFO     Pulse! Pin: 15 Power: 0.84 kW
+2022-02-19 13:17:00 INFO     Pin: 11 Power: 0.0 kW SecondsSinceLastPulse: 10
+2022-02-19 13:17:00 INFO     Pin: 15 Power: 0.84 kW SecondsSinceLastPulse: 2
+2022-02-19 13:17:00 INFO     Pin: 13 Power: 0.0 kW SecondsSinceLastPulse: 10
+2022-02-19 13:17:01 INFO     Pulse! Pin: 15 Power: 0.872 kW
+2022-02-19 13:17:06 INFO     Pulse! Pin: 15 Power: 0.872 kW
+2022-02-19 13:17:10 INFO     Pulse! Pin: 15 Power: 0.826 kW
+2022-02-19 13:17:10 INFO     Pin: 11 Power: 0.0 kW SecondsSinceLastPulse: 20
+2022-02-19 13:17:10 INFO     Pin: 15 Power: 0.826 kW SecondsSinceLastPulse: 0
+2022-02-19 13:17:10 INFO     Pin: 13 Power: 0.0 kW SecondsSinceLastPulse: 20
+2022-02-19 13:17:14 INFO     Pulse! Pin: 15 Power: 0.911 kW
+2022-02-19 13:17:18 INFO     Pulse! Pin: 15 Power: 0.831 kW
+2022-02-19 13:17:20 INFO     Pin: 11 Power: 0.0 kW SecondsSinceLastPulse: 30
+2022-02-19 13:17:20 INFO     Pin: 15 Power: 0.831 kW SecondsSinceLastPulse: 1
+2022-02-19 13:17:20 INFO     Pin: 13 Power: 0.0 kW SecondsSinceLastPulse: 30
+2022-02-19 13:17:22 INFO     Pulse! Pin: 15 Power: 0.901 kW
+2022-02-19 13:17:26 INFO     Pulse! Pin: 15 Power: 0.831 kW
+2022-02-19 13:17:27 INFO     Pulse! Pin: 11 Power: 0.976 kW
+2022-02-19 13:17:30 INFO     Pin: 11 Power: 0.976 kW SecondsSinceLastPulse: 3
+2022-02-19 13:17:30 INFO     Pin: 15 Power: 0.831 kW SecondsSinceLastPulse: 3
+2022-02-19 13:17:30 INFO     Pin: 13 Power: 0.0 kW SecondsSinceLastPulse: 40
+2022-02-19 13:17:31 INFO     Pulse! Pin: 15 Power: 0.832 kW
+2022-02-19 13:17:35 INFO     Pulse! Pin: 15 Power: 0.893 kW
+2022-02-19 13:17:39 INFO     Pulse! Pin: 15 Power: 0.829 kW
 ```
