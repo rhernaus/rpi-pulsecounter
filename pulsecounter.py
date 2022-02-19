@@ -36,7 +36,7 @@ meter3_gpio = 13 # GPIO22 is pin 13
 
 # Configure mqtt
 mqtt_server = os.environ.get('MQTT_HOST')
-mqtt_port = os.environ.get('MQTT_PORT')
+mqtt_port = int(os.environ.get('MQTT_PORT'))
 mqtt_keepalive = 60
 mqtt_username = os.environ.get('MQTT_USERNAME')
 mqtt_password = os.environ.get('MQTT_PASSWORD')
