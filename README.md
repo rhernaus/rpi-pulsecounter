@@ -34,7 +34,7 @@ A docker image with the script is published on Docker Hub. You can start it on a
 
 ```bash
 #!/bin/bash
-IMAGE=rhernaus/rpi-pulsecounter:1645260297
+IMAGE=rhernaus/rpi-pulsecounter
 docker pull $IMAGE
 docker run \
   --name rpi-pulsecounter \
@@ -46,4 +46,10 @@ docker run \
   -e mqtt_pass=xxxxxx
   -e config='[{"pin":11,"impkwh":100,"topic":"hass/power/meter1/kw"},{"pin":15,"impkwh":1000,"topic":"hass/power/meter2/kw"},{"pin":13,"impkwh":100,"topic":"hass/power/meter3/kw"}]'
   -d $IMAGE
+```
+
+## Example output
+
+```text
+
 ```

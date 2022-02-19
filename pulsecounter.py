@@ -3,13 +3,19 @@ import paho.mqtt.client as mqtt
 import time
 import os
 import json
+import logging
 
 def on_pulse(pin):
   global config
   gpio = [gpio for gpio in config if gpio["pin"] == pin][0]
   gpio["kw"] = 3600 / (time.time() - gpio["t0"]) / gpio["impkwh"]
   gpio["t0"] = time.time()
-  print('Pulse! Pin:', gpio["pin"], ' kW:', '{:.3f}'.format(gpio["kw"]))
+  logging.info('Pulse! Pin:', gpio["pin"], ' Power:', '{:.3f}'.format(gpio["kw"]), 'kW')
+
+logging.basicConfig(
+  format='%(asctime)s %(levelname)-8s %(message)s',
+  level=logging.INFO,
+  datefmt='%Y-%m-%d %H:%M:%S')
 
 # Sleep time (in seconds)
 sleeptime = 10
@@ -50,6 +56,5 @@ while True:
   for gpio in config:
     if gpio["kw"] > 3600 / (time.time() - gpio["t0"]) / gpio["impkwh"]:
       gpio["kw"] = 3600 / (time.time() - gpio["t0"]) / gpio["impkwh"]
-    print('Pin:', gpio["pin"], ' kW:', '{:.3f}'.format(gpio["kw"]),'kW SecondsSinceLastPulse:', int(time.time() - gpio["t0"]))
+    logging.info('Pin:', gpio["pin"], ' Power:', '{:.3f}'.format(gpio["kw"]),'kW SecondsSinceLastPulse:', int(time.time() - gpio["t0"]))
     client.publish(gpio["topic"], round(float(gpio["kw"]),3))
-    print
