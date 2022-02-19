@@ -1,4 +1,4 @@
-FROM rhernaus/rpi-python-serial-wiringpi:1642943603
+FROM python
 
 COPY . /app
 WORKDIR /app
